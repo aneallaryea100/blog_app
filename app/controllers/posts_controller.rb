@@ -2,6 +2,6 @@ class PostsController < ApplicationController
   def index; end
 
   def show
-    params[:users_id]
+    params[:user_id]
   end
 end
