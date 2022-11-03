@@ -1,1 +1,16 @@
-<h1>User page#index</h1>
+<h1>User page = user-> index.html</h1>
+
+<div>
+     <%@user.each do |person|%>
+        <%= link_to user_path(person.id) do%>
+     <div class="user_image">
+        <img src="<%= person.photo %>" />
+     </div>  
+
+     <div class="name_container">
+         <h1><%= person.name %></h1> 
+         <span>Number of posts: <%= person.posts_counter%></span>
+     </div>
+         <%end%>
+     <%end%> 
+</div>

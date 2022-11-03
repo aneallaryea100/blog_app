@@ -1,2 +1,29 @@
-<h1>Show Page</h1>
+<h1>Show Page= post-> show.html</h1>
 <p>post list</p>
+
+<div class="post_show_container">
+    <div class="show_header">
+        <h1>Post <span><%=@post.id %></span> by <%= @user.name%></h1>
+        <p>Comments: <%= @post.comments_counter || 0%></p>
+        <p>likes: <%= @post.likes_counter || 0%></p>
+    </div>
+
+    <div class="post_details">
+        <p>Post Text: <%= @post.text%></p>
+    </div>
+
+    <div class="comment_holder">
+    <% @post.recent_comments.each do |comments| %>
+        <p>Comment: <%= comments.text || "No comments added"%></p>
+        <%end%>
+    </div>
+
+    <div class="comment_holder">
+    <% @post.all_comments.each do |comments| %>
+    <h5>All comments</h5>
+        <p>Comment: <%= comments.text || "No comments added"%></p>
+        <%end%>
+    </div>
+
+
+</div>
