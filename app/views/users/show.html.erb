@@ -1,2 +1,48 @@
-<h1>Users page</h1>
+<h1>Users page = user-> show.html</h1>
 <p>show users</p>
+
+<div class="container_user_show">
+
+
+        <div class="photo_username">
+            <div class="image_container">
+                <img src= "<%= @user.photo %>" />
+            </div>
+
+            <div class="user_name">
+                <h1>Name: <%= @user.name%></h1>
+                <span>Number of posts: <%= @user.posts_counter || 0 %></span>
+            </div>
+        </div>
+
+        <div class="bio_posts">
+
+        <div class="bio">
+            <h2>Bio</h2>
+            <p><%= @user.bio%></p>
+        </div>
+
+    <%@user.most_recent_post.each do |posters|%>
+    
+        <div class="post">
+            <h2>Post: <%= posters.id%></h2>
+            <p>Posts Text:<%= posters.text || "comments unavailable"%></p>
+            <p>
+                <span>Comments: <%= posters.comments_counter || 0%></span>
+                <span>Likes: <%= posters.likes_counter || 0 %></span>
+            </p>
+        </div>
+
+        </div>
+    <%end%>
+
+    <%= link_to user_posts_path(@user) do %>
+        <div class="all_post">
+            <button>See all post</button>
+        </div>
+    <%end%>
+
+   
+   
+   
+</div>

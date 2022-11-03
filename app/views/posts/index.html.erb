@@ -1,2 +1,39 @@
-<h1>Post page#index</h1>
+<h1>Post page = post-> index.html</h1>
 <p>post list</p>
+
+<div class="single_user_container">
+    <div class="image_name_holder">
+        <div class="user_image">
+            <img src="<%= @user.photo %>" />
+        </div>  
+
+        <div class="name_container">
+            <h1><%= @user.name %></h1> 
+            <span>Number of posts: <%= @user.posts_counter%></span>
+        </div>
+     </div>
+
+    <%@posts.each do |post|%>
+        <%= link_to user_post_path(@user, post) do%>
+            <div class="post_holder">
+                <h3>Post: <%= post.id%></h3>
+
+                <div>
+                    <h3><%= post.title%></h3>
+                    <p>Description: <%= post.text%></p>
+                    <p>Number of comments: <%= post.comments_counter%></p>
+                    <p>Number of likes: <%= post.likes_counter%></p>
+                </div>
+            </div>
+
+            <div>
+              <% post.recent_comments.each do |comment| %>
+                <p><%=comment.author.name %>: Comment <%= comment.id %> <%=comment.text %></p>
+              <% end %>
+          </div>
+        <%end%>
+     <%end%>
+
+     <button>Pagination</button>
+
+</div>
