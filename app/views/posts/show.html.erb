@@ -1,6 +1,14 @@
 <h1>Show Page= post-> show.html</h1>
 <p>post list</p>
 
+<h1>Showing selected Post</h1>
+<p>
+ Title: <%= @post.title %>
+</p>
+<p>
+ Text: <%= @post.text %>
+</p>
+
 <div class="post_show_container">
     <div class="show_header">
         <h1>Post <span><%=@post.id %></span> by <%= @user.name%></h1>
@@ -12,15 +20,19 @@
         <p>Post Text: <%= @post.text%></p>
     </div>
 
+    <%= render "likes/like"%>
+
     <div class="comment_holder">
     <% @post.recent_comments.each do |comments| %>
         <p>Comment: <%= comments.text || "No comments added"%></p>
         <%end%>
     </div>
 
+    <%= render "comments/form"%>
+
     <div class="comment_holder">
-    <% @post.all_comments.each do |comments| %>
     <h5>All comments</h5>
+    <% @post.all_comments.each do |comments| %>
         <p>Comment: <%= comments.text || "No comments added"%></p>
         <%end%>
     </div>
