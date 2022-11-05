@@ -1,6 +1,13 @@
 <h1>Post page = post-> index.html</h1>
 <p>post list</p>
 
+
+ <%= link_to new_user_post_path(@user.id) do %>
+        <div class="all_post">
+            <button>create Post</button>
+        </div>
+    <%end%>
+
 <div class="single_user_container">
     <div class="image_name_holder">
         <div class="user_image">
@@ -35,5 +42,7 @@
      <%end%>
 
      <button>Pagination</button>
+
+    
 
 </div>

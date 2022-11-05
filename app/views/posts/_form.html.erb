@@ -1,0 +1,28 @@
+<%= form_with model: Post, url: user_posts_path, class: "form-create" do |pp| %>
+
+<% if @post.errors.any? %>
+ <h2>The following errors prevented the article from saving:</h2>
+ <ul>
+ <% @post.errors.full_messages.each do |msg|%>
+ <li><%= msg %></li>
+ <% end %>
+ </ul>
+<% end %>
+
+
+<p>
+    <%= pp.label :title %>
+    <%= pp.text_field :title %>
+</p>
+
+<p>
+    <%= pp.label :text %>
+    <%= pp.text_area :text  %>
+</p>
+
+<p>
+    <%= pp.submit "submit", class: "submit-btn"%>
+</p>
+
+<%end%>
+
