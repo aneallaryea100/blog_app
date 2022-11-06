@@ -12,5 +12,4 @@ class LikesController < ApplicationController
       render :new
     end
   end
-
 end
