@@ -43,7 +43,7 @@ describe 'show page' do
 
     Post.create(
       author_id: @user.id,
-      title: 'Hello from West Africa',
+      title: 'User 4',
       text: 'Be the best you can be today',
       comments_counter: 0,
       likes_counter: 0
@@ -82,6 +82,13 @@ describe 'show page' do
   it 'should see a button that view all user\'s posts' do
     expect(page).to have_link('See all post')
   end
+
+  it 'should redirect to user\'s posts index page when clicking on \'See all posts\'' do
+    click_link('See all post')
+    expect(page).to have_current_path(user_posts_path(@user.first))
+  end
+
+  
 
 end
 
