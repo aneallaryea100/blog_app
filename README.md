@@ -90,9 +90,9 @@ Kindly modify the files as needed.
 * Twitter: [@aneallaryea](https://twitter.com/AnealLaryea)
 
 👤 **Ntare Guy**
-* Github: [@aneallaryea](https://github.com/41hulk)
-* LinkdIn: [@aneallaryea](https://www.linkedin.com/in/ntare-guy/)
-* Twitter: [@aneallaryea](https://twitter.com/ntare_guy)
+* Github: [@41hulk](https://github.com/41hulk)
+* LinkdIn: [@ntareguy](https://www.linkedin.com/in/ntare-guy/)
+* Twitter: [@ntareguy](https://twitter.com/ntare_guy)
 
 
 ## 🤝 Contributing
