@@ -31,6 +31,5 @@ RSpec.describe User, type: :feature do
         expect(page).to have_current_path(user_path(user))
       end
     end
-
   end
 end

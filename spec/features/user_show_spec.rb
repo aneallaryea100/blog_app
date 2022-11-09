@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :feature do
-describe 'show page' do
+  describe 'show page' do
     before(:each) do
       @user = User.create(
         name: 'Aneal Laryea',

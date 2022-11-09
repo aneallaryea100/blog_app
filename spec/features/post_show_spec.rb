@@ -27,7 +27,7 @@ RSpec.describe Post, type: :feature do
 
     it 'should see who wrote the post' do
       @user.each do |user|
-        expect(user.name).to have_content("Aneal Laryea")
+        expect(user.name).to have_content('Aneal Laryea')
       end
     end
 
