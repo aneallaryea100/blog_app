@@ -1,5 +1,3 @@
-<% flash.each do |name, msg| %>
-    <ul>
-     <li><%= msg %></li>
-    </ul>
+<% flash.each do |name, message| %>
+   <div class="<%= name %>"><%= message %></div>
 <% end %>

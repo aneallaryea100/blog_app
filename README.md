@@ -89,6 +89,11 @@ Kindly modify the files as needed.
 * LinkdIn: [@aneallaryea](https://www.linkedin.com/in/nii-aneal-84ba7a147)
 * Twitter: [@aneallaryea](https://twitter.com/AnealLaryea)
 
+👤 **Ntare Guy**
+* Github: [@41hulk](https://github.com/41hulk)
+* LinkdIn: [@ntareguy](https://www.linkedin.com/in/ntare-guy/)
+* Twitter: [@ntareguy](https://twitter.com/ntare_guy)
+
 
 ## 🤝 Contributing
 
