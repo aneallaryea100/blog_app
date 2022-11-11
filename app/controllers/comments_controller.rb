@@ -17,10 +17,18 @@ class CommentsController < ApplicationController
     @comment = Comment.new
   end
 
-  def delete
-    @comment = Comment.find(params[:id]).destroy
+  # def delete
+  #   @comment = Comment.find(params[:id]).destroy
+  #   respond_to do |format|
+  #     format.html { redirect_to user_path(current_user), notice: 'Comment Deleted!' }
+  #   end
+  # end
+
+  def destroy
+    @comment.find(params[:id]).destroy
+
     respond_to do |format|
-      format.html { redirect_to user_path(current_user), notice: 'Comment Deleted!' }
+      format.html { redirect_to user_posts_path(current_user), notice: 'Comment deleted!' }
     end
   end
 
