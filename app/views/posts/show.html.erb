@@ -20,13 +20,13 @@
         <p>Post Text: <%= @post.text%></p>
     </div>
 
-    <%# <div> %>
-    <%# <% if can? :destroy, @post %>
-        <%# <%= form_with model: Post, url: user_post_path(@post, @user), method: :delete do |form| %> %>
-          <%# <%= form.submit "Delete Post", class: "delete-button" %> %>
-        <%# <% end %> %>
-      <%# <% end %> %>
-    <%# </div> %>
+    <div class="action_div">
+    <% if can? :destroy, @post %>
+    <%= form_with model: @post, url: user_post_path(@post.author, @post), method: :delete do |f| %>
+        <%= f.submit "Delete Post", class: "button" %>
+    <% end %>
+    <% end %>
+</div>
 
     <%= render "likes/like"%>
 

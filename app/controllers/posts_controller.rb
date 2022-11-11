@@ -26,11 +26,14 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
   end
 
-  def delete
-    @post = Post.find(params[:id]).destroy
+  def destroy
+    @post = Post.find(params[:id])
+    @title = @post.title
+    @post.destroy
+
     respond_to do |format|
-      format.html { redirect_to user_path(current_user), notice: 'Post Deleted!' }
-    end 
+      format.html { redirect_to user_path(current_user), notice: "Post #{@title} deleted!" }
+    end
   end
 
   private
