@@ -1,9 +1,13 @@
 class PostsController < ApplicationController
   load_and_authorize_resource
-  
+
   def index
     @posts = Post.all
     @user = User.includes(posts: [:comments]).find(params[:user_id].to_i)
+  end
+
+  def current_ability
+    @current_ability ||= Ability.new(current_admin)
   end
 
   def new
@@ -23,7 +27,6 @@ class PostsController < ApplicationController
       render :new
     end
   end
-
 
   # def create
   #   @post = Post.new(post_params)
@@ -46,6 +49,7 @@ class PostsController < ApplicationController
   def destroy
     @post = Post.find(params[:id]).destroy
     @title = @post.title
+    @id.posts_counter -= 1
 
     respond_to do |format|
       format.html { redirect_to user_path(current_admin), notice: "Post #{@title} deleted!" }
