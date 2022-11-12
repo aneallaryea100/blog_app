@@ -1,4 +1,3 @@
-<h1>Post page = post-> index.html</h1>
 <p>post list</p>
 
 
@@ -33,16 +32,28 @@
                 </div>
             </div>
 
+         <% if can? :destroy, @post %>
+          <%= form_with url: user_post_path(@user.id, post.id), method: :delete do |f| %>
+            <%= f.submit 'Delete post', class: 'btn-danger btn-sm mx-2' %>
+          <% end %>
+        <% end %>
             <div>
               <% post.recent_comments.each do |comment| %>
                 <p><%=comment.author.name %>: Comment <%= comment.id %> <%=comment.text %></p>
               <% end %>
           </div>
         <%end%>
-     <%end%>
+
+    <div class="d-flex">
+     <% if can? :destroy, @comment %>
+       <%= form_with url: user_post_comment_path(post.author.id, post.id, comment.id), :method => :delete do |f| %>
+         <%= f.submit 'Delete', class: 'glyphicon glyphicon-trash mx-2' %>
+       <% end %>
+     <% end %>
+     </div>
+<%end%>
 
      <button>Pagination</button>
+</div>
 
     
-
-</div>

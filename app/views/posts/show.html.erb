@@ -1,4 +1,3 @@
-<h1>Show Page= post-> show.html</h1>
 <p>post list</p>
 
 <h1>Showing selected Post</h1>
@@ -19,6 +18,10 @@
     <div class="post_details">
         <p>Post Text: <%= @post.text%></p>
     </div>
+
+    <div class="action_div">
+     <%= render 'posts/delete' %>
+</div>
 
     <%= render "likes/like"%>
 
