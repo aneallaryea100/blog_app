@@ -21,11 +21,7 @@
     </div>
 
     <div class="action_div">
-    <% if can? :destroy, Post %>
-    <%= form_with model: @post, url: user_post_path(@user, @post), method: :delete do |f| %>
-        <%= f.submit "Delete Post", class: "button" %>
-    <% end %>
-    <% end %>
+     <%= render 'posts/delete' %>
 </div>
 
     <%= render "likes/like"%>
