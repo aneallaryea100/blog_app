@@ -1,11 +1,11 @@
 module Api
   module V1
     class CommentsController < ApplicationController
-      before_action :authenticate_user!
+      before_action :authenticate_admin!
 
       def index
-        @comments = Comment.where(user_id: params[:user_id])
-        render json: @comments
+        comments = Comment.where(author_id: params[:post_id])
+        render json: comments
       end
 
       def create
