@@ -8,4 +8,3 @@ class UsersController < ApplicationController
   end
 end
 
-# rspec ./spec/features/user_spec.rb
