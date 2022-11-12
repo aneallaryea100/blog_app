@@ -36,7 +36,7 @@ class CommentsController < ApplicationController
 
     # respond_to do |format|
     #   format.html { redirect_to user_posts_path(current_admin), notice: 'Comment deleted!' }
-    end
+    # end
   end
 
   private

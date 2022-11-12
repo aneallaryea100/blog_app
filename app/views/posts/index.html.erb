@@ -32,7 +32,8 @@
                     <p>Number of likes: <%= post.likes_counter%></p>
                 </div>
             </div>
-         <% if can? :destroy, post %>
+
+         <% if can? :destroy, @post %>
           <%= form_with url: user_post_path(@user.id, post.id), method: :delete do |f| %>
             <%= f.submit 'Delete post', class: 'btn-danger btn-sm mx-2' %>
           <% end %>
@@ -43,19 +44,17 @@
               <% end %>
           </div>
         <%end%>
+
     <div class="d-flex">
-     <p><%=comment.author.name %>: <%=comment.text %></p>
-     <% if can? :destroy, comment %>
+     <% if can? :destroy, @comment %>
        <%= form_with url: user_post_comment_path(post.author.id, post.id, comment.id), :method => :delete do |f| %>
          <%= f.submit 'Delete', class: 'glyphicon glyphicon-trash mx-2' %>
        <% end %>
      <% end %>
      </div>
-  <%end%>
-     <%end%>
+<%end%>
 
      <button>Pagination</button>
+</div>
 
     
-
-</div>
