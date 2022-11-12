@@ -8,8 +8,4 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:sign_up, keys: %i[name email password])
     devise_parameter_sanitizer.permit(:account_update, keys: %i[name bio email password current_password])
   end
-  # def current_ability
-  #   model_name = controller_name.classify
-  #   @current_ability ||= "#{model_name}Ability".constantize.new(current_user)
-  # end
 end
