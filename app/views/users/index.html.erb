@@ -1,5 +1,16 @@
 <h1>User page = user-> index.html</h1>
 
+<div class="nav">
+    <%if admin_signed_in? %>
+      <%= button_to "Sign Out", destroy_admin_session_path, method: :delete %>
+
+     <button> <%= link_to "Edit your profile", edit_admin_registration_path %></button>
+
+    <% else %>
+      <%= link_to "Sign In",  new_admin_session_path %>
+    <% end %>
+</div>
+
 <div>
      <%@user.each do |person|%>
         <%= link_to user_path(person.id) do%>
