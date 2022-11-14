@@ -7,5 +7,3 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 end
-
-# rspec ./spec/features/user_spec.rb
